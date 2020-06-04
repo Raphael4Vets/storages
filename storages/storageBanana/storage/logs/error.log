@@ -24,3 +24,4 @@
 04-06-2020 16:29:37 - PHP Notice:  Undefined index: price no arquivo /var/www/html/bananatoy/catalog/controller/common/cart.php na linha 108
 04-06-2020 16:30:18 - PHP Warning:  A non-numeric value encountered no arquivo /var/www/html/bananatoy/catalog/controller/common/cart.php na linha 108
 04-06-2020 17:18:50 - Twig_Error_Syntax:  Unexpected "}" in "default/template/checkout/confirm.twig" at line 51. no arquivo /var/www/html/bananatoy/system/library/template/Twig/Lexer.php na linha 262
+04-06-2020 18:35:14 - Exception:  Erro: Não foi possível conectar-se ao banco de dados! no arquivo /var/www/html/bananatoy/system/library/db/mysqli.php na linha 13
