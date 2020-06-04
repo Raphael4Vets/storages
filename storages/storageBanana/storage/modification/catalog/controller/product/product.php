@@ -226,11 +226,12 @@ class ControllerProductProduct extends Controller {
 			$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
 			$data['heading_title'] = $product_info['name'];
-	                $data['ID_Original'] = $product_info['ID_Original'];
+	        $data['ID_Original'] = $product_info['ID_Original'];
 			$data['grupo'] = $product_info['Grupo'];
-                        $data['cod_Barras'] = $product_info['cod_Barras'];
-                        $data['class_Fiscal'] = $product_info['class_Fiscal'];
-                        $data['D14'] = $product_info['D14'];
+            $data['cod_Barras'] = $product_info['cod_Barras'];
+            $data['class_Fiscal'] = $product_info['class_Fiscal'];
+            $data['D14'] = $product_info['D14'];
+            $data['promocao'] = ($product_info['price'] / 100) * 60;
 
 			$data['text_minimum'] = sprintf($this->language->get('text_minimum'), $product_info['minimum']);
 			$data['text_login'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true));
@@ -252,6 +253,10 @@ class ControllerProductProduct extends Controller {
 			
 
 			//$data['ID_Original'] = $product_info['ID_Original'];
+
+            $data['stock_quantity'] = $product_info['quantity'];
+            $data['text_out_of_stock'] = $product_info['stock_status'];
+            
 
             $data['stock_quantity'] = $product_info['quantity'];
             $data['text_out_of_stock'] = $product_info['stock_status'];
@@ -426,6 +431,10 @@ class ControllerProductProduct extends Controller {
 				}
 
 				$data['products'][] = array(
+
+			'quantity'     			=> $result['quantity'],
+            'text_out_of_stock'     => $result['stock_status'],
+            
 
 			'quantity'     			=> $result['quantity'],
             'text_out_of_stock'     => $result['stock_status'],
